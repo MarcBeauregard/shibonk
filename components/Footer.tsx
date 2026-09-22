@@ -14,7 +14,7 @@ export default function Footer() {
           <nav aria-label="Footer" className="flex flex-wrap gap-5 font-semibold">
             <Link href="/brand">Brand kit</Link>
             <Link href="/legal">Legal &amp; risks</Link>
-            <Link href="/#faq">FAQ</Link>
+            <a href="#faq">FAQ</a>
           </nav>
         </div>
         <p className="m-0 max-w-[80ch] text-[0.88rem] text-paper/75">

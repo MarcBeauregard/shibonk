@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   poweredByHeader: false,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGhPages ? "/shibonk" : "",
+  },
   ...(isGhPages
     ? {
         basePath: "/shibonk",

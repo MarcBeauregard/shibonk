@@ -1,20 +1,21 @@
 import Link from "next/link";
 import BuyButtons from "./BuyButtons";
 import { token } from "@/config/token";
+import { asset } from "@/lib/paths";
 
 export function Logo({ size = 44, className = "" }: { size?: number; className?: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element -- static SVG, no optimisation needed
-    <img src="/brand/shibonk-token.svg" width={size} height={size} alt="" className={className} />
+    <img src={asset("/brand/shibonk-token.svg")} width={size} height={size} alt="" className={className} />
   );
 }
 
 const links = [
-  { href: "/#lore", label: "Lore" },
-  { href: "/#tokenomics", label: "Tokenomics" },
-  { href: "/#buy", label: "How to buy" },
-  { href: "/#bonkmap", label: "Bonkmap" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "#lore", label: "Lore" },
+  { href: "#tokenomics", label: "Tokenomics" },
+  { href: "#buy", label: "How to buy" },
+  { href: "#bonkmap", label: "Bonkmap" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export default function Nav() {

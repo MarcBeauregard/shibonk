@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import { token } from "@/config/token";
+import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "Brand kit",
@@ -36,11 +37,11 @@ export default function Brand() {
       <H>Logo</H>
       <div className="grid items-center gap-8 sm:grid-cols-[220px_1fr]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/shibonk-token.svg" alt={`${token.name} token logo`} width={220} height={220} className="mx-auto" />
+        <img src={asset("/brand/shibonk-token.svg")} alt={`${token.name} token logo`} width={220} height={220} className="mx-auto" />
         <ul className="m-0 grid list-none gap-2.5 p-0">
           {files.map((f) => (
             <li key={f.href}>
-              <a href={f.href} download className="btn btn-paper btn-sm w-full justify-between sm:w-auto">
+              <a href={asset(f.href)} download className="btn btn-paper btn-sm w-full justify-between sm:w-auto">
                 {f.label} <span aria-hidden="true">↓</span>
               </a>
             </li>

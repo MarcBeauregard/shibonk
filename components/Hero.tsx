@@ -2,6 +2,7 @@ import BonkStage from "./hero/BonkStage";
 import BuyButtons from "./BuyButtons";
 import CopyAddress from "./CopyAddress";
 import { token } from "@/config/token";
+import { asset } from "@/lib/paths";
 
 const words = ["One", "bonk", "at a", "time."];
 
@@ -9,7 +10,7 @@ function FloatCoin({ className, delay }: { className: string; delay: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/brand/shibonk-token.svg"
+      src={asset("/brand/shibonk-token.svg")}
       alt=""
       aria-hidden="true"
       className={`pointer-events-none absolute hidden animate-bob lg:block ${className}`}
