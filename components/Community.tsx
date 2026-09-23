@@ -5,6 +5,10 @@ const official = [
   { name: "Website", url: token.siteUrl, note: "this page" },
   { name: "X / Twitter", url: token.links.x },
   { name: "Telegram", url: token.links.telegram },
+  { name: "Pump.fun", url: token.links.pump },
+  { name: "Block X", url: token.links.blockx },
+  { name: "Jupiter", url: token.links.jupiter, note: "buy" },
+  { name: "Solscan", url: token.links.solscan },
   { name: "DEXScreener", url: token.links.dexscreener },
   { name: "Birdeye", url: token.links.birdeye },
 ];
@@ -39,6 +43,8 @@ export default function Community() {
   const socials = [
     { label: "X / Twitter", url: token.links.x, cls: "" },
     { label: "Telegram", url: token.links.telegram, cls: "btn-paper" },
+    { label: "Pump.fun", url: token.links.pump, cls: "btn-paper" },
+    { label: "Block X", url: token.links.blockx, cls: "btn-paper" },
     { label: "DEXScreener", url: token.links.dexscreener, cls: "btn-paper" },
   ].filter((s) => s.url);
 

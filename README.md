@@ -38,13 +38,15 @@ All are `NEXT_PUBLIC_*`, so they are baked in at build time: **redeploy after ch
 | Variable | Before launch | After launch |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | your domain, e.g. `https://shibonk.xyz` | same |
-| `NEXT_PUBLIC_TOKEN_CA` | empty → "drops at launch" | the mint address |
+| `NEXT_PUBLIC_TOKEN_CA` | falls back to the live mint if unset | the mint address (same fallback) |
 | `NEXT_PUBLIC_PAIR_ADDRESS` | empty | Raydium pair (optional) |
-| `NEXT_PUBLIC_LAUNCHED` | `false` | `true` |
+| `NEXT_PUBLIC_LAUNCHED` | live mint is treated as launched | `true` |
 | `NEXT_PUBLIC_LAUNCH_DATE` | ISO UTC time for the countdown, or empty | ignored |
-| `NEXT_PUBLIC_X_URL`, `NEXT_PUBLIC_TELEGRAM_URL` | official accounts | same |
+| `NEXT_PUBLIC_X_URL` | empty → "announced at launch" | official account, or still empty |
+| `NEXT_PUBLIC_TELEGRAM_URL` | falls back to `https://t.me/shibonkonsol` | same |
+| `NEXT_PUBLIC_PUMP_URL`, `NEXT_PUBLIC_BLOCKX_URL` | optional; derived from the mint | same |
 
-Empty links are shown as "announced at launch", never as dead links. Market data only loads when `LAUNCHED=true` **and** a CA is set.
+An empty X link is shown as "announced at launch", never as a dead link. If `NEXT_PUBLIC_TOKEN_CA` is empty, the site uses the live Shibonk mint and treats that mint as launched, so production does not show "Drops at launch". Telegram falls back to `https://t.me/shibonkonsol`. Market data loads when the token is launched and a CA is set. Pump.fun and Block X URLs are derived from the mint unless overridden.
 
 ## Deploy (Vercel)
 

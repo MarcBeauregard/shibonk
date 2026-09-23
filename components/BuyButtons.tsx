@@ -66,6 +66,11 @@ export default function BuyButtons({ compact = false }: { compact?: boolean }) {
       <a className={`btn btn-pink ${compact ? "btn-sm" : ""}`} href={token.links.jupiter} target="_blank" rel="noopener noreferrer">
         Buy on Jupiter ↗
       </a>
+      {!compact && token.links.pump && (
+        <a className="btn btn-paper" href={token.links.pump} target="_blank" rel="noopener noreferrer">
+          Pump.fun ↗
+        </a>
+      )}
       {!compact && (
         <button type="button" className="btn btn-paper" onClick={openSwap} aria-busy={state === "loading"}>
           {state === "loading" ? "Loading swap…" : "Swap here"}

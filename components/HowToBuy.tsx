@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import BuyButtons from "./BuyButtons";
+import { token } from "@/config/token";
 
 const steps = [
   {
@@ -25,10 +26,14 @@ const steps = [
     body: (
       <>
         Open{" "}
-        <a href="https://jup.ag" target="_blank" rel="noopener noreferrer" className="font-extrabold">
+        <a href={token.links.jupiter} target="_blank" rel="noopener noreferrer" className="font-extrabold">
           Jupiter
+        </a>{" "}
+        or{" "}
+        <a href={token.links.pump} target="_blank" rel="noopener noreferrer" className="font-extrabold">
+          Pump.fun
         </a>
-        , paste the contract address from the top of this page, check it matches, and swap.
+        , check the contract address from the top of this page matches, and swap.
       </>
     ),
     dot: "bg-shiba",

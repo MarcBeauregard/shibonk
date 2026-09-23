@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: "Where do I find the contract address?",
-    a: "At the top of this page and on our official X. Before launch there is none: anyone sharing a CA before we do is not us. Always compare the full address before swapping.",
+    a: `Copy it from the CA box at the top of this page${token.links.telegram ? ", and from the official Telegram" : ""}. Always compare the full address before swapping. Anyone sharing a different contract is not us.`,
   },
   {
     q: "Is the liquidity locked?",
